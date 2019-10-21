@@ -16,7 +16,7 @@ This repo contains code for our ICCV 2019 paper [PANet: Few-Shot Image Semantic 
 
 1. Download `SegmentationClassAug`, `SegmentationObjectAug`, `ScribbleAugAuto` from [here](https://drive.google.com/drive/folders/1N00R9m9qe2rKZChZ8N7Hib_HR2HGtXHp?usp=sharing) and put them under `VOCdevkit/VOC2012`.
 
-2. Download `Segmentation` and use it to replace `VOCdevkit/VOC2012/ImageSets/Segmentation`.
+2. Download `Segmentation` from [here](https://drive.google.com/drive/folders/1N00R9m9qe2rKZChZ8N7Hib_HR2HGtXHp?usp=sharing) and use it to replace `VOCdevkit/VOC2012/ImageSets/Segmentation`.
 
 
 ### Usage
