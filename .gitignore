@@ -1,0 +1,7 @@
+experiments/
+runs/
+__pycache__/
+*.pth
+*.ipynb
+*DS_Store
+*.sh
