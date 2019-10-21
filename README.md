@@ -12,45 +12,11 @@ This repo contains code for our ICCV 2019 paper [PANet: Few-Shot Image Semantic 
 * sacred 0.7.5
 * tqdm 4.32.2
 
-### Data Preprocessing
+### Data Preparation for VOC Dataset
 
-Preprocess PASCAL VOC data (with SBD augmentation) before running the few-shot segmentation code. VOC data folder looks like
+1. Download `SegmentationClassAug`, `SegmentationObjectAug`, `ScribbleAugAuto` from [here](https://drive.google.com/drive/folders/1N00R9m9qe2rKZChZ8N7Hib_HR2HGtXHp?usp=sharing) and put them under `VOCdevkit/VOC2012`.
 
-```
-VOC2012
-├── Annotations
-├── ImageSets
-├── JPEGImages
-├── SegmentationClass
-├── SegmentationClassAug
-└── SegmentationObject
-```
-
-1. Generate `png` format instance annotation data for SBD augmentation.
-
-    Use `PANet/util/sbd_instance_process.py` to process SBD instance segmentation data and transform it from .mat to .png. Save the output `png`s into `VOC2012/SegmentationObjectAug/`. You may need to configure the path before running this snippet.
-
-2. Generates filename list according to the object class labels each image contains.
-
-    Use `PANet/util/voc_classwise_filenames.py` to process VOC segmentation data and and generates filename list according to the object class labels each image contains. Check the snippet source for details. You may need to configure the path before running this snippet.
-
-3. Generates scribble annotations.
-
-    The scribble annotations are available [here](https://drive.google.com/file/d/1H6x5QPj4T4dFkq9qChYt0TNEenEBFvE_/view?usp=sharing). Download it and put it under `VOC2012` folder. The annotations are generated using `PANet/util/scribbles.py`.
-
-After preprocessing, the data folder should look like
-
-```
-VOC2012
-├── Annotations
-├── ImageSets
-├── JPEGImages
-├── ScribbleAugAuto
-├── SegmentationClass
-├── SegmentationClassAug
-├── SegmentationObject
-└── SegmentationObjectAug
-```
+2. Download `Segmentation` and use it to replace `VOCdevkit/VOC2012/ImageSets/Segmentation`.
 
 
 ### Usage

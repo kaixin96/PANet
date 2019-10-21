@@ -11,7 +11,6 @@ contains this class label.
 """
 
 import os
-from itertools import chain
 
 import numpy as np
 from PIL import Image
@@ -69,29 +68,4 @@ for split in dic:
                                      'class{}.txt'.format(label))
         with open(imageset_path, 'w+') as f:
             for item in dic[split][label]:
-                f.write("{}\n".format(item))
-
-
-# split the filenames in several folds according to class labels
-# images in each fold do not contain class labels of other folds
-
-folds_idx = ['0001', '0010', '0100', '1000',
-             '0011', '0110', '1100', '1001',
-             '0111', '1110', '1101', '1011']
-folds_idx_lst = [list(idx) for idx in folds_idx]
-folds = [list(chain.from_iterable(range(5 * i + 1, 5 * i + 6)
-                                  for i, idx in enumerate(fold_idx) if idx == '1'))
-         for fold_idx in folds_idx_lst]
-
-for split in dic:
-    for i, fold in enumerate(folds):
-        files_fold = set()
-        for label in fold:
-            files_fold.update(dic[split][label])
-        for label in set(range(1, 21)) - set(fold):
-            files_fold -= set(dic[split][label])
-        imageset_path = os.path.join(voc_dir, 'ImageSets', 'Segmentation', split,
-                                     'class{0}.txt'.format(folds_idx[i]))
-        with open(imageset_path, 'w+') as f:
-            for item in sorted(files_fold):
                 f.write("{}\n".format(item))
