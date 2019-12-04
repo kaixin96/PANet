@@ -28,10 +28,11 @@ This repo contains code for our ICCV 2019 paper [PANet: Few-Shot Image Semantic 
 ### Citation
 Please consider citing our paper if the project helps your research. BibTeX reference is as follows.
 ```
-@article{wang2019panet,
-  title={PANet: Few-Shot Image Semantic Segmentation with Prototype Alignment},
-  author={Wang, Kaixin and Liew, Jun Hao and Zou, Yingtian and Zhou, Daquan and Feng, Jiashi},
-  journal={arXiv preprint arXiv:1908.06391},
-  year={2019}
+@InProceedings{Wang_2019_ICCV,
+author = {Wang, Kaixin and Liew, Jun Hao and Zou, Yingtian and Zhou, Daquan and Feng, Jiashi},
+title = {PANet: Few-Shot Image Semantic Segmentation With Prototype Alignment},
+booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
+month = {October},
+year = {2019}
 }
 ```
