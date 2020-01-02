@@ -1,4 +1,3 @@
-experiments/
 runs/
 __pycache__/
 *.pth
