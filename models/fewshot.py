@@ -62,9 +62,9 @@ class FewShotSeg(nn.Module):
         qry_fts = img_fts[n_ways * n_shots * batch_size:].view(
             n_queries, batch_size, -1, *fts_size)   # N x B x C x H' x W'
         fore_mask = torch.stack([torch.stack(way, dim=0)
-                                 for way in fore_mask], dim=0)  # Wa x Sh x B x H' x W'
+                                 for way in fore_mask], dim=0)  # Wa x Sh x B x H x W
         back_mask = torch.stack([torch.stack(way, dim=0)
-                                 for way in back_mask], dim=0)  # Wa x Sh x B x H' x W'
+                                 for way in back_mask], dim=0)  # Wa x Sh x B x H x W
 
         ###### Compute loss ######
         align_loss = 0
