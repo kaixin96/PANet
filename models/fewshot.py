@@ -151,7 +151,7 @@ class FewShotSeg(nn.Module):
                 expect shape: N x C x H' x W'
             pred: predicted segmentation score
                 expect shape: N x (1 + Wa) x H x W
-            supp_fts: embedding fatures for support images
+            supp_fts: embedding features for support images
                 expect shape: Wa x Sh x C x H' x W'
             fore_mask: foreground masks for support images
                 expect shape: way x shot x H x W
